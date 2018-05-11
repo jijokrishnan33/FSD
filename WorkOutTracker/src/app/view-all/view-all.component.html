@@ -1,0 +1,22 @@
+<div class="container">
+  <div>
+    <input class="form-control" id="myInput" type="text" [(ngModel)]="searchText" placeholder="Search..">
+  </div>
+  <div>
+    <br>
+  </div>
+  <div *ngIf="workouts?.length>0">
+    <div *ngFor="let workout of workouts | workoutfilter:searchText" class="panel panel-default">
+
+      <div class="panel-body">
+        {{workout.title}}
+      </div>
+      <div class="panel-footer">
+        <button type="button" class="btn btn-primary" [routerLink]="['/edit',workout.id]">Edit</button>
+        <button type="button" class="btn btn-warning" (click)="delete(workout)">Delete</button>
+        <button type="button" class="btn btn-success" [routerLink]="['/start',workout.id]">Start</button>
+        <button type="button" class="btn btn-danger" [routerLink]="['/end',workout.id]">Stop</button>
+      </div>
+    </div>
+  </div>
+</div>

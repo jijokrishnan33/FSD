@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="inputRow">
+                <div class="displayLabel">Total Workout Today:</div>
+                <div class="displayValue"> {{totalWorkoutToday}}</div>
+                <div class="displayValue"> min</div>
+            </div>
+            <div class="inputRow">
+                <div class="displayLabel">Total Workout This Week:</div>
+                <div class="displayValue"> {{totalWorkoutThisWeek}}</div>
+                <div class="displayValue"> min</div>
+            </div>
+            <div class="inputRow">
+                <div class="displayLabel">Total Workout This Month:</div>
+                <div class="displayValue"> {{totalWorkoutThisMonth}}</div>
+                <div class="displayValue"> min</div>
+            </div>
+        </div>
+    </div>
+    <div class="chartContainer">
+        <fusioncharts [id]="id" [width]="width" [height]="height" [type]="type" [dataFormat]="dataFormat" [dataSource]="dayGraphDataSource"></fusioncharts>
+        <div class="panel panel-default">
+            <div class="panel-body" style="height: 40px;padding: 10px">
+                <div class="inputRow">
+                    <div class="displayLabel" style="width: 190px;">Week Total Calories Burned:</div>
+                    <div class="displayValue"> {{totalCalBurnWeekly}}</div>
+                </div>
+            </div>
+        </div>
+        <fusioncharts [width]="width" [height]="height" [type]="type" [dataFormat]="dataFormat" [dataSource]="weekGraphDataSource"></fusioncharts>
+        <div class="panel panel-default">
+                <div class="panel-body" style="height: 40px;padding: 10px">
+                    <div class="inputRow">
+                        <div class="displayLabel" style="width: 190px;">Month Total Calories Burned:</div>
+                        <div class="displayValue"> {{totalCalBurnMonthly}}</div>
+                    </div>
+                </div>
+            </div>
+        <fusioncharts [width]="width" [height]="height" [type]="type" [dataFormat]="dataFormat" [dataSource]="yearGraphDataSource"></fusioncharts>
+        <div class="panel panel-default">
+                <div class="panel-body" style="height: 40px;padding: 10px">
+                    <div class="inputRow">
+                        <div class="displayLabel" style="width: 190px;">Year Total Calories Burned:</div>
+                        <div class="displayValue"> {{totalCalBurnYearly}}</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

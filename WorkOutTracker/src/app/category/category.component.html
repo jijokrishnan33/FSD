@@ -1,0 +1,22 @@
+<div class="container">
+  <div style="text-align:left">
+    <h2> {{title}} </h2>
+  </div>
+  <div>
+    <input class="form-control" id="myInput" [(ngModel)]="searchText" type="text" placeholder="Search..">
+  </div>
+  <div class="inputTextBox">
+    <input id="category-name" type="text" [(ngModel)]="newcategory">
+    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="cal-burnt" (click)="add()">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+  <div *ngIf="categoryList?.length>0">
+    <div *ngFor="let category of categoryList | filter :searchText">
+      <div class="inputTextBox">
+        <input id="category-name" type="text" [(ngModel)]="category.name" [disabled]="category.id!=editedCat">
+        <button type="button" class="btn btn-success" (click)="edit(category)">{{category.id!=editedCat ? 'Edit':'Update'}}</button>
+        <button type="button" class="btn btn-danger" (click)="delete(category)">Delete</button>
+      </div>
+    </div>
+  </div>

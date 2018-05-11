@@ -1,0 +1,44 @@
+<div class="container">
+  <div style="text-align:left">
+    <h2> {{tittle}} </h2>
+  </div>
+  <div> <br></div>
+  <div class="inputRow">
+    <div class="inputLabel">
+      <label>Title:</label>
+    </div>
+    <div class="inputTextBox">
+      <input id="title" [(ngModel)]="activeWorkout.workOut.title" disabled />
+    </div>
+  </div>
+  <div class="inputRow">
+    <div class="inputLabel">
+      <label>Comments:</label>
+    </div>
+    <div class="inputTextBox">
+      <textarea id="note" name="note" [(ngModel)]="activeWorkout.comment"></textarea>
+    </div>
+  </div>
+  <div class="inputRow">
+    <div class="inputLabel">
+      <label>{{fieldLabel}} Date:</label>
+    </div>
+    <div class="inputTextBox">
+      <input type="date" id="date" [ngModel]="fieldLabel=='Start'?(activeWorkout.startDate | date :'yyyy-MM-dd'):(activeWorkout.endDate | date :'yyyy-MM-dd')"
+        (ngModelChange)="fieldLabel=='Start'?activeWorkout.startDate= $event:activeWorkout.endDate= $event" />
+    </div>
+  </div>
+  <div class="inputRow">
+    <div class="inputLabel">
+      <label>{{fieldLabel}} Time:</label>
+    </div>
+    <div class="inputTextBox">
+      <input type="time" id="time" [ngModel]="fieldLabel=='Start'?(activeWorkout.startTime):(activeWorkout.endTime)" (ngModelChange)="fieldLabel=='Start'?activeWorkout.startTime= $event:activeWorkout.endTime= $event"
+      />
+    </div>
+  </div>
+  <div class="inputRow">
+    <button type="button" class="btn btn-success" (click)="process()">{{fieldLabel}}</button>
+    <button type="button" class="btn btn-danger" [routerLink]="['/view-all']">Cancel</button>
+  </div>
+</div>

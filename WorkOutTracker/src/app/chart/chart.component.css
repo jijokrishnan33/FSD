@@ -1,0 +1,31 @@
+.container{
+    margin:auto;
+}
+
+.chartContainer{
+    margin:auto;
+}
+
+.inputRow {
+    display: table-row;
+    height: 30px;
+}
+
+.displayLabel {
+    width: 170px;
+    display: table-cell;
+}
+
+.displayValue {
+    display: table-cell;
+}
+
+.panel-default{
+    width: 585px;
+}
+
+@media (min-width: 992px){
+    .container {
+        width: 70%; 
+    }
+}

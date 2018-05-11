@@ -1,0 +1,79 @@
+
+input {
+    border-color: lightseagreen;
+    border-radius: 5px;
+    width: 250px;
+    border-style: solid;
+}
+
+
+.inputRow {
+    display: table-row;
+    height: 30px;
+}
+
+.inputLabel {
+    width: 200px;
+    display: table-cell;
+}
+
+.inputTextBox {
+    display: table-cell;
+}
+
+select {
+    border-color: lightseagreen;
+    border-radius: 5px;
+    width: 250px;
+    border-style: solid;
+}
+
+textarea {
+    border-color: lightseagreen;
+    border-radius: 5px;
+    width: 250px;
+    border-style: solid;
+}
+.button {
+    
+          background-color: lightseagreen;
+    
+          border-radius: 5px;
+    
+          padding: 10px 32px;
+    
+          text-align: center;
+    
+          text-decoration: none;
+    
+          font-size: 14px;
+    
+          width: 150px;
+    
+          color: white;
+    
+          line-height: 5px;
+    
+          float: right;
+    
+          margin-right: 27em;
+    
+          margin-bottom: 15em;
+    
+        }
+
+        .container{
+            margin:auto;
+            width: 75%;
+        }
+
+        .btn-success{
+            margin-right: 15px;
+            width: 75px;
+        }
+        .btn-danger {
+            width: 75px;
+        }
+        h1,h2{
+            font-family: cursive
+        }
