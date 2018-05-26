@@ -166,7 +166,9 @@ export class ChartComponent implements OnInit {
             }
         ]
     }
-    constructor(private workoutService: WorkoutService) { }
+    constructor(private workoutService: WorkoutService) { 
+        this.getAllActiveWorkout();
+    }
 
 
     totalWorkoutToday: number = 0;
@@ -178,7 +180,7 @@ export class ChartComponent implements OnInit {
     totalCalBurnYearly: number = 0;
 
     ngOnInit() {
-        this.getAllActiveWorkout();
+      
     }
 
     getAllActiveWorkout() {
@@ -281,9 +283,11 @@ export class ChartComponent implements OnInit {
     }
 
 
-    getMinsOfSingleWorkout(element) {
-        var actStartTime = Date.parse(element.startDate + 'T' + element.startTime);
-        var actEndTime = Date.parse(element.endDate + 'T' + element.endTime);
+    getMinsOfSingleWorkout(element : ActiveWorkout) {
+        let startDate:Date= new Date(element.startDate);
+        let endDate:Date= new Date(element.endDate);
+        var actStartTime = Date.parse(startDate.toISOString().split('T')[0] + 'T' + element.startTime);
+        var actEndTime = Date.parse(endDate.toISOString().split('T')[0] + 'T' + element.endTime);
         var minsWorkout = +((actEndTime - actStartTime) / (1000 * 60)).toFixed(2);
         return minsWorkout;
 

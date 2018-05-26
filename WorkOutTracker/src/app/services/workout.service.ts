@@ -20,19 +20,19 @@ export class WorkoutService {
  
   getAllWorkouts(): Observable<Workout[]>{
 
-    return this.http.get("http://localhost:8085/workout/getall").map(this.extractData)
+    return this.http.get("http://localhost:8085/workouttrackerservice/workout/getall").map(this.extractData)
     .catch(this.handleErrorObservable);
   }
 
   getWorkoutById(id): Observable<Workout>{
-      return this.http.get("http://localhost:8085/workout/getworkout/"+id).map(this.extractData)
+      return this.http.get("http://localhost:8085/workouttrackerservice/workout/getworkout/"+id).map(this.extractData)
       .catch(this.handleErrorObservable);
   }
 
   updateWorkOut(workout:Workout): Observable<ServiceResponse> {
     let headers= new Headers({'Content-Type':'application/json'});
     let options= new RequestOptions({headers:headers});
-    return this.http.post("http://localhost:8085/workout/save",workout,options).map(this.extractData)
+    return this.http.post("http://localhost:8085/workouttrackerservice/workout/save",workout,options).map(this.extractData)
     .catch(this.handleErrorObservable);
 }
 
@@ -40,14 +40,14 @@ save(workout:Workout): Observable<ServiceResponse>{
   let headers= new Headers({'Content-Type':'application/json'});
   let options= new RequestOptions({headers:headers});
   console.log(workout);
-  return this.http.post("http://localhost:8085/workout/save",workout,options).map(this.extractData)
+  return this.http.post("http://localhost:8085/workouttrackerservice/workout/save",workout,options).map(this.extractData)
   .catch(this.handleErrorObservable);
 }
 deleteWorkout(workout:Workout): Observable<ServiceResponse>{
   let headers= new Headers({'Content-Type':'application/json'});
   let options= new RequestOptions({headers:headers});
   console.log(workout);
-  return this.http.post("http://localhost:8085/workout/delete",workout,options).map(this.extractData)
+  return this.http.post("http://localhost:8085/workouttrackerservice/workout/delete",workout,options).map(this.extractData)
   .catch(this.handleErrorObservable);
 }
 
@@ -55,12 +55,12 @@ saveActiveWorkout(activeWorkout:ActiveWorkout): Observable<ServiceResponse>{
   let headers= new Headers({'Content-Type':'application/json'});
   let options= new RequestOptions({headers:headers});
   console.log(activeWorkout);
-  return this.http.post("http://localhost:8085/activeworkout/save",activeWorkout,options).map(this.extractData)
+  return this.http.post("http://localhost:8085/workouttrackerservice/activeworkout/save",activeWorkout,options).map(this.extractData)
   .catch(this.handleErrorObservable);
 }
 
 getAllActiveWorkouts():  Observable<ActiveWorkout[]>{
-  return this.http.get("http://localhost:8085/activeworkout/getall").map(this.extractData)
+  return this.http.get("http://localhost:8085/workouttrackerservice/activeworkout/getall").map(this.extractData)
   .catch(this.handleErrorObservable);
 }
 

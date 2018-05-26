@@ -16,8 +16,8 @@ import { ServiceResponse } from '../services/service.response';
 })
 export class EditWorkoutComponent implements OnInit {
 
-  private workOut: Workout;
-  private categoryList:Category[];
+  workOut: Workout;
+  categoryList:Category[];
   observableWorkout: Observable<Workout>;
   observableMessage: Observable<ServiceResponse>;
   response: ServiceResponse;

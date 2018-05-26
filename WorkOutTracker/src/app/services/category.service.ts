@@ -16,14 +16,14 @@ export class CategoryService {
 
   getAllCategories(): Observable<Category[]>{
 
-    return this.http.get("http://localhost:8085/category/getall").map(this.extractData)
+    return this.http.get("http://localhost:8085/workouttrackerservice/category/getall").map(this.extractData)
     .catch(this.handleErrorObservable);
   }
 
   update(category:Category): Observable<ServiceResponse>{
     let headers= new Headers({'Content-Type':'application/json'});
     let options= new RequestOptions({headers:headers});
-    return this.http.post("http://localhost:8085/category/save",category,options).map(this.extractData)
+    return this.http.post("http://localhost:8085/workouttrackerservice/category/save",category,options).map(this.extractData)
     .catch(this.handleErrorObservable);
   }
 
@@ -31,14 +31,14 @@ export class CategoryService {
     console.log(category);
     let headers= new Headers({'Content-Type':'application/json'});
     let options= new RequestOptions({headers:headers});
-    return this.http.post("http://localhost:8085/category/save",category,options).map(this.extractData)
+    return this.http.post("http://localhost:8085/workouttrackerservice/category/save",category,options).map(this.extractData)
     .catch(this.handleErrorObservable);
   }
 
   delete(category:Category): Observable<ServiceResponse>{
     let headers= new Headers({'Content-Type':'application/json'});
     let options= new RequestOptions({headers:headers});
-    return this.http.post("http://localhost:8085/category/delete",category,options).map(this.extractData)
+    return this.http.post("http://localhost:8085/workouttrackerservice/category/delete",category,options).map(this.extractData)
     .catch(this.handleErrorObservable);
   }
 
